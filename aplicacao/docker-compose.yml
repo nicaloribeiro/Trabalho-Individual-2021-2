@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres_db:
+    container_name: postgres_database
+    image: postgres
+    volumes:
+      - ./data/postgres/db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports: 
+      - "5432:5432"
+    restart: always

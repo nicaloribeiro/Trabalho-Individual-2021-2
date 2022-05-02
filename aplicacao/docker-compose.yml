@@ -27,6 +27,18 @@ services:
     depends_on:
       - postgres_db
 
+  nginx:
+    container_name: nginx_server
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - ruby_app
+    networks:
+      - app_ruby-db_postgres
+
 networks:
   app_ruby-db_postgres:
     driver: bridge

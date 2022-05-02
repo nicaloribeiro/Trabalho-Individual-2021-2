@@ -2,6 +2,7 @@ name: Continuous Deployment to Docker Hub
 
 on:
   workflow_call:
+  workflow_dispatch:
   push:
     branches: [main]
 
